@@ -1,13 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {createStore, applyMiddleware} from 'redux';
-import ReduxPromise from 'redux-promise';
-
 import { combineReducers } from 'redux';
+import WeatherReducer from './reducer_weather';
 
 const rootReducer = combineReducers({
-  state: (state = {}) => state
+  weather: WeatherReducer
 });
 
 export default rootReducer;

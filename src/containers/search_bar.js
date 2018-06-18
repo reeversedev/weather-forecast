@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { fetchWeather } from "../actions";
 
@@ -22,7 +22,7 @@ export class SearchBar extends Component {
     // We need to go and fetch weather data
     this.props.fetchWeather(this.state.term);
     this.setState({
-      term: ''
+      term: ""
     });
   };
 
@@ -49,4 +49,7 @@ function matchDispatchToProps(dispatch) {
   return bindActionCreators({ fetchWeather }, dispatch);
 }
 
-export default connect(null, matchDispatchToProps)(SearchBar);
+export default connect(
+  null,
+  matchDispatchToProps
+)(SearchBar);
